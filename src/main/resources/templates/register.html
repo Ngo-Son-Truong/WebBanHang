@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Star Admin2 </title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" th:href="@{/admin/vendors/feather/feather.css}">
+<link rel="stylesheet" th:href="@{/admin/vendors/mdi/css/materialdesignicons.min.css}">
+<link rel="stylesheet" th:href="@{/admin/vendors/ti-icons/css/themify-icons.css}">
+<link rel="stylesheet" th:href="@{/admin/vendors/simple-line-icons/css/simple-line-icons.css}">
+<link rel="stylesheet" th:href="@{/admin/vendors/css/vendor.bundle.base.css}">
+<!-- endinject -->
+<!-- inject:css -->
+<link rel="stylesheet" th:href="@{/admin/css/vertical-layout-light/style.css}">
+<!-- endinject -->
+<link rel="shortcut icon" th:href="@{/admin/images/favicon.png}"/>
+</head>
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <h4 class="text-center">Đăng ký / Register</h4>
+              	<form class="form-sample" th:action="@{/register}" method="post" th:object="${account}" enctype="multipart/form-data">                  	
+                    <div class="mb-3">
+                      <label class="form-label">User Name</label>
+                      <input type="text" class="form-control" th:field="*{username}" name="username" id="username">
+                    </div>                    
+                    <div class="mb-3">
+                      <label class="form-label">Email</label>
+                      <input type="text" class="form-control" th:field="*{email}" name="email" id="email">
+                    </div>
+                    <div class="mb-3">
+                      <label  class="form-label">Password</label>
+                      <input type="password" class="form-control" th:field="*{password}" name="password" id="password">
+                    </div> 
+                    <div class="mb-3">
+                      <label  class="form-label">Full Name</label>
+                      <input type="text" class="form-control" th:field="*{fullname}" name="fullname" id="fullname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="formFileSm" class="form-label">Avatar</label>
+                      <input class="form-control form-control-sm" name="accountimg" accept="image/jpeg, image/png"  id="accountimg" type="file">
+                    </div>
+                    <div class="mb-3">
+                      <input type="hidden" th:field="*{admin}" name="admin" id="admin"  value="0">
+                    </div>
+                    <!-- Hide -->
+                    <div class="mb-3">
+					  <input class="form-check-input d-none" th:field="*{activated}" name="activated" id="activated" type="checkbox" checked="checked">
+					  <label class="form-check-label d-none" for="activated">Activated</label>
+					  <input class="form-check-input d-none" th:field="*{admin}" name="admin" id="admin" type="checkbox">
+					  <label class="form-check-label d-none" for="admin">Admin</label>
+					</div>
+                    <button type="submit" class="btn btn-primary">Submit</button>                    
+             	</form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- plugins:js -->
+  <script th:src="@{/admin/vendors/js/vendor.bundle.base.js}"></script>
+</body>
+
+</html>

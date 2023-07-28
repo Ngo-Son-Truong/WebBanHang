@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Star Admin2 </title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" th:href="@{/admin/vendors/feather/feather.css}">
+<link rel="stylesheet" th:href="@{/admin/vendors/mdi/css/materialdesignicons.min.css}">
+<link rel="stylesheet" th:href="@{/admin/vendors/ti-icons/css/themify-icons.css}">
+<link rel="stylesheet" th:href="@{/admin/vendors/simple-line-icons/css/simple-line-icons.css}">
+<link rel="stylesheet" th:href="@{/admin/vendors/css/vendor.bundle.base.css}">
+<!-- endinject -->
+<!-- inject:css -->
+<link rel="stylesheet" th:href="@{/admin/css/vertical-layout-light/style.css}">
+<!-- endinject -->
+<link rel="shortcut icon" th:href="@{/admin/images/favicon.png}"/>
+</head>
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">              
+              <h4 class="text-center">Đăng Nhập</h4>
+              <h6 class="fw-light text-center">Vui Lòng Đăng Nhập Để Bắt Đầu.</h6>
+              <form class="pt-3" action="/login" method="post" >
+                <div class="form-group">
+                  <input type="text" name="username" class="form-control form-control-lg" placeholder="User Name">
+                </div>
+                <div class="form-group">
+                  <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="mt-3 text-center">
+                	<input type="submit" value="Đăng Nhập" class="btn btn-primary btn-block">         
+                </div> 
+                <p Style="color: red" th:text="${error}"></p>               
+                <div class="text-center mt-3 fw-light">
+                  Chưa Có Một Tài Khoản? 
+                  <a href="./register.html" th:href="@{/register}" class="text-primary">Tạo Tài Khoản</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <script th:src="@{/admin/vendors/js/vendor.bundle.base.js}"></script>
+</body>
+
+</html>
